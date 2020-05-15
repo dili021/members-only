@@ -6,6 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -19,15 +20,24 @@
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
       </div>
-        
-      <h1 class="title text-center text-primary">Member only!</h1>
+       <div class="logo text-center my-5"> 
+        <h1 class="title text-info font-weight-bolder"><%= link_to 'Members only!', root_path, class: "text-info" %></h1>
+        <% if user_signed_in? %>
+          <h4 class="text-light my-8">Welcome <%= current_user.name %></h4>
+        <% end %>
+      </div>
       <div class="row justify-content-between dashboard">
         <% if user_signed_in? %>
-          <%= link_to 'Profile', edit_user_registration_path, class: "btn btn-primary" %>
-          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+          <%= link_to 'Make a new Post', new_post_path, class: "btn btn-info" %>
+          <div>
+            <%= link_to 'Profile', edit_user_registration_path, class: "btn btn-info" %>
+            <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+          </div>
         <% else %>
-          <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary"  %>
-          <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary"  %>
+          <div>
+            <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-info"  %>
+            <%= link_to 'Sign In', new_user_session_path, class: "btn btn-info"  %>
+          </div>
         <% end %>
       </div>
       <div class="row justify-content-center">

@@ -13,3 +13,24 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+    background: url(background-2.jpg) no-repeat center;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Balsamiq Sans', cursive;
+ }
+
+ .logo {
+     background-color: rgba(0, 0, 0, 0.5);
+     padding: 10px 0;
+     font-family: 'Balsamiq Sans', cursive;
+ }
+
+ .logo h1{
+    font-size: 70px;
+ }
+
+ .text-big {
+     font-size: 20px;
+ }
