@@ -13,18 +13,20 @@
 
   </head>
 
-  <body>
+  <body class="bg-light">
     <div class="container p-0">
-      <div class="row">
+      <div class="row alert">
         <p class="notice"><%= notice %></p>
         <p class="alert"><%= alert %></p>
       </div>
-        
-      <h1 class="title text-center text-primary">Member only!</h1>
+      <%= link_to :root do %>
+        <h1 class="title text-center text-primary">Member only!</h1>
+      <% end %>
       <div class="row justify-content-between dashboard">
         <% if user_signed_in? %>
-          <%= link_to 'Profile', edit_user_registration_path, class: "btn btn-primary" %>
-          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "btn btn-dark" %>
+          <%= link_to 'Profile', edit_user_registration_path, class: "btn h-25 btn-primary" %>
+          <%= render 'new'%>
+          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: "btn h-25 btn-dark" %>
         <% else %>
           <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary"  %>
           <%= link_to 'Sign In', new_user_session_path, class: "btn btn-primary"  %>
