@@ -1,0 +1,11 @@
+<div class="col-md-5 text-center">
+<%= form_with(model: @post, local: true) do |form|%>
+    <%= form.label :title, hidden: true %>
+    <%= form.text_field :title, placeholder: "title", class:"m-1 form-control"%> 
+
+    <%= form.label :body, hidden: true %>
+    <%= form.text_area :body, placeholder: "body", class: "m-1 form-control"%> 
+
+    <%= form.submit value: 'Create post', class: "m-2 btn btn-primary" %>
+<% end %>
+</div>

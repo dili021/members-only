@@ -1,9 +1,18 @@
-<%= form_with(model: @post, local: true) do |form|%>
-    <%= form.label :title %>
-    <%= form.text_field :title%> 
+<h1 class="m-5 text-center w-100 text-light">Tells us something</h1>
+<div class="col-md-6">
+    <%= form_with(model: @post, local: true) do |form|%>
+        <div class="form-group">
+            <%= form.label :title, class: "text-info text-big" %><br>
+            <%= form.text_field :title, class: "form-control" %> 
+        </div>
 
-    <%= form.label :body %>
-    <%= form.text_area :body%> 
+        <div class="form-group">
+            <%= form.label :body, class: "text-info text-big"%><br>
+            <%= form.text_area :body, class: "form-control", :rows=>10 %> 
+        </div>
 
-    <%= form.submit value: 'Create a post' %>
-<% end %>
+        <div class="form-group">
+            <%= form.submit value: 'Create a post', class: "btn btn-info" %>
+        </div>
+    <% end %>
+</div>

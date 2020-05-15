@@ -2,6 +2,7 @@
 
 > This is part of the Authentication with Devise Project in [The Odin Project's](https://www.theodinproject.com) Ruby on Rails Curriculum.
 
+![screenshot](./app_screenshot.png)
 
 ## Built With
 
